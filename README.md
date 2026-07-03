@@ -2,7 +2,7 @@
 # 🚗 3-Mode Smart Robot Car using Arduino Uno and ESP32
 
 <p align="center">
-  <img src="Images/Top view (Turned on).jpg" width="700" alt="3-Mode Smart Robot Car">
+  <img src="Images/Top view (Turned on).jpg" width="500" alt="3-Mode Smart Robot Car">
 </p>
 
 A multifunctional smart robot car capable of operating in **three independent modes**: **Obstacle Avoidance**, **Line Following**, and **Bluetooth Manual Control**.
