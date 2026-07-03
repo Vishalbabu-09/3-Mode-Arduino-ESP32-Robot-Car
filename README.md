@@ -15,9 +15,9 @@ The project combines an **Arduino Uno** for real-time motor and sensor control w
 
 # 🎥 Project Demonstration
 
-> 📹 Demo video will be added after uploading to YouTube.
+Watch the complete working demonstration of the robot on YouTube.
 
-[![Watch Demo](https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/YOUR_VIDEO_LINK)
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/05GIOicuBzw)
 
 ---
 
