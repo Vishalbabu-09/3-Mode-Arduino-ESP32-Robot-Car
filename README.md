@@ -2,7 +2,7 @@
 # 🚗 3-Mode Smart Robot Car using Arduino Uno and ESP32
 
 <p align="center">
-  <img src="Images/Robot.jpg" width="700" alt="3-Mode Smart Robot Car">
+  <img src="Images/Top view (Turned on).jpg" width="700" alt="3-Mode Smart Robot Car">
 </p>
 
 A multifunctional smart robot car capable of operating in **three independent modes**: **Obstacle Avoidance**, **Line Following**, and **Bluetooth Manual Control**.
@@ -115,7 +115,7 @@ The robot uses four rocker switches mounted on the chassis.
 | Middle | Obstacle Avoidance |
 | Right-most | Line Following |
 
-> **Important:** Only **one operating mode** should be enabled at a time. If two or more operating mode switches are turned ON simultaneously, the Arduino intentionally places the robot in a **STOP** state to prevent conflicting control logic and ensure safe operation.
+> **NOTE:** Only **one operating mode** should be enabled at a time. If two or more operating mode switches are turned ON simultaneously, the Arduino intentionally places the robot in a **STOP** state to prevent conflicting control logic and ensure safe operation.
 
 ---
 
@@ -222,7 +222,6 @@ The ESP32 receives Bluetooth commands from a smartphone and forwards them to the
 # 💻 Development Environment
 
 - Arduino IDE
-- ESP32 Arduino Core
 - C++
 - Serial Monitor
 
@@ -239,13 +238,16 @@ The ESP32 receives Bluetooth commands from a smartphone and forwards them to the
 │   └── ESP32_BluetoothCar_Code.ino
 │
 ├── Images/
-│   ├── Robot.jpg
+│   ├── Chassis.jpg
+│   ├── Side view.jpg
+│   ├── Top view(Turned on).jpg
+│   ├── Top view(Turned off).jpg
 │   ├── Wiring_Diagram.png
 │   ├── Block_Diagram.png
 │   └── Circuit.jpg
 │
 ├── Video/
-│   └── Demo.mp4
+│   └── 3 Mode Smart car.mp4
 │
 ├── README.md
 └── LICENSE
@@ -300,8 +302,8 @@ Responsible for:
 
 # 👥 Contributors
 
-- **Vishal**
-- **Nitish**
+- **T S Vishal Babu**
+- **Nitish M A**
 
 Developed as part of the **Value Added Course (VAC) – Arduino Microcontroller**.
 
