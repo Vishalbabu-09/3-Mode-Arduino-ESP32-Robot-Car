@@ -2,7 +2,7 @@
 
 A multifunctional smart robot car capable of operating in **three independent modes**: **Obstacle Avoidance**, **Line Following**, and **Bluetooth Manual Control**. The project integrates an **Arduino Uno** for real-time motor and sensor control with an **ESP32 DevKit** for wireless Bluetooth communication.
 
-> Developed as part of the **Value Added Course (VAC) on Arduino MCU ** project by me and my teammate.
+> Developed as part of the **Value Added Course (VAC) on Arduino MCU** project by me (Vishal) and my teammate (Nitish).
 
 ---
 
