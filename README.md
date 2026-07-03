@@ -5,6 +5,16 @@
   <img src="Images/Top view (Turned on).jpg" width="500" alt="3-Mode Smart Robot Car">
 </p>
 
+<p align="center">
+
+![Arduino](https://img.shields.io/badge/Arduino-Uno-00979D?logo=arduino&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-DevKit-E7352C)
+![Language](https://img.shields.io/badge/Language-C%2B%2B-00599C)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Modes](https://img.shields.io/badge/Modes-3-orange)
+
+</p>
+
 A multifunctional smart robot car capable of operating in **three independent modes**: **Obstacle Avoidance**, **Line Following**, and **Bluetooth Manual Control**.
 
 The project combines an **Arduino Uno** for real-time motor and sensor control with an **ESP32 DevKit** for Bluetooth communication, creating a modular embedded system capable of both autonomous and manual operation.
@@ -26,6 +36,20 @@ Watch the complete working demonstration of the robot on YouTube.
 This project demonstrates the implementation of a multi-functional smart robot car capable of switching between three operating modes using dedicated rocker switches.
 
 The robot combines autonomous navigation and wireless manual control into a single platform.
+
+---
+
+# ❓ Design Decision – Why Arduino Uno + ESP32?
+
+A common question regarding this project is:
+
+> **Why use both an Arduino Uno and an ESP32 when the ESP32 alone is capable of handling the entire project?**
+
+This project was developed as part of a **Value Added Course (VAC) focused on Arduino Microcontrollers**, where the Arduino Uno served as the primary controller for implementing the robot's logic.
+
+Instead of using a dedicated Bluetooth module such as the **HC-05**, an **ESP32 DevKit** was integrated to provide Bluetooth connectivity. The ESP32 receives commands wirelessly from a smartphone and forwards them to the Arduino Uno through UART serial communication.
+
+> **Note:** From a hardware perspective, this project **can be implemented using only an ESP32**, since it provides sufficient GPIO pins along with built-in **Bluetooth** and **Wi-Fi** capabilities. The dual-controller architecture was intentionally chosen to satisfy the course objectives while also demonstrating UART communication between two microcontrollers in an embedded system.
 
 ### Operating Modes
 
@@ -219,6 +243,18 @@ The ESP32 receives Bluetooth commands from a smartphone and forwards them to the
 
 ---
 
+---
+
+# ⚠ Programming / Upload Notes
+
+When uploading firmware to the **ESP32 DevKit**, temporarily disconnect the UART communication wires between the **ESP32** and the **Arduino Uno** (**ESP32 TX ↔ Arduino RX** and **ESP32 RX ↔ Arduino TX**).
+
+Keeping both boards connected during programming may interfere with the ESP32 bootloader, resulting in upload or synchronization errors.
+
+After successfully uploading the firmware, reconnect the TX and RX wires before operating the robot.
+
+> **Note:** The Arduino Uno firmware can be uploaded normally without disconnecting any peripherals.
+
 # 💻 Development Environment
 
 - Arduino IDE
@@ -279,9 +315,61 @@ Responsible for:
 
 ---
 
-# 🔌 Wiring Diagram
+---
 
-> Add the wiring diagram below.
+# ❓ Frequently Asked Questions
+
+### Why are both an Arduino Uno and an ESP32 used?
+
+The project was developed as part of a **Value Added Course (VAC)** focused on Arduino Microcontrollers. The Arduino Uno serves as the primary controller, while the ESP32 replaces the need for a separate Bluetooth module by providing built-in Bluetooth communication.
+
+---
+
+### Can this project be implemented using only an ESP32?
+
+**Yes.**
+
+The ESP32 has sufficient GPIO pins along with built-in Bluetooth and Wi-Fi capabilities to control the motors, sensors, and Bluetooth communication on a single microcontroller.
+
+The dual-controller architecture was adopted primarily to satisfy the course objectives while demonstrating UART communication between two embedded systems.
+
+---
+
+### Why wasn't an HC-05 Bluetooth module used?
+
+Since the ESP32 already provides integrated Bluetooth functionality, it was used instead of adding an external HC-05 Bluetooth module.
+
+---
+
+### Why can only one operating mode be selected at a time?
+
+Each operating mode uses different control logic.
+
+Allowing multiple modes to run simultaneously would result in conflicting commands to the motors.
+
+To avoid this, the software automatically places the robot in a **STOP** state whenever multiple operating mode switches are enabled simultaneously.
+
+---
+
+### Why are the ENA and ENB pins connected together?
+
+During hardware testing, the **ENB enable channel** of the L298N motor driver board was found to be faulty.
+
+To ensure reliable operation, both enable pins were electrically connected together and controlled using a single PWM signal from **Arduino Pin D6**.
+
+This allows both motor channels to operate correctly using the same speed control signal.
+
+---
+
+### Why should the ESP32 TX/RX wires be disconnected while uploading firmware?
+
+The ESP32 bootloader uses its UART interface during programming.
+
+If the ESP32 remains connected to the Arduino Uno through the TX/RX lines, the serial communication may interfere with the upload process and cause synchronization errors.
+
+Temporarily disconnecting the UART connections resolves this issue.
+# 🔌 Detailed Block Diagram
+
 
 <p align="center">
   <img src="Images/Wiring diagram.png" width="850" alt="Wiring Diagram">
