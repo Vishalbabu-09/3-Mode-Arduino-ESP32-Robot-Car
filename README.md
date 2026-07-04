@@ -1,5 +1,5 @@
 
-# 🚗 3-Mode Smart Robot Car using Arduino Uno and ESP32
+# 🚗 3-Mode Smart Robot Car using Arduino Uno and ESP32.
 
 <p align="center">
   <img src="Images/Top view (Turned on).jpg" width="500" alt="3-Mode Smart Robot Car">
